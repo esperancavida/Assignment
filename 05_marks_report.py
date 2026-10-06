@@ -6,6 +6,7 @@ Fail for each student. Then print the class average."""
 marks = {"Ram": 78, "Sita": 92, "Hari": 35, "Gita": 64}
 total = 0
 top = 0
+topper_name = ""
 
 for name, mark in marks.items():
     if mark>=80:
@@ -17,9 +18,14 @@ for name, mark in marks.items():
     else:
         print(f"{name}: {mark} \nGrade:N/A\nRemarks: Fail")
     total += mark
+    # if mark > top:
+    #     top = mark
     if mark > top:
         top = mark
+        topper_name = name
+    
 
 average = total / len(marks)
 print(f"Class average: {average}")
-print(f"Topper: {list(marks.keys())[list(marks.values()).index(top)]}({top} marks)")
+# print(f"Topper: {list(marks.keys())[list(marks.values()).index(top)]}({top} marks)")
+print(f"Topper: {topper_name} ({top} marks)")
